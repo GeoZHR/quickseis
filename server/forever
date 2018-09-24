@@ -1,9 +1,13 @@
-#!/usr/bin/python
-from subprocess import Popen
-import sys
+#!/home/ec2-user/anaconda3/bin/python
+from subprocess import run
+import sys, time
 
 filename = "serve.py --port=7500"
 while True:
-    print("\nStarting " + filename)
-    p = Popen("python " + filename, shell=True)
-    p.wait()
+    try:
+        print("\nStarting " + filename)
+        p = run("python " + filename, shell=True, timeout=60*60)
+        p.wait()
+    except:
+        continue
+    time.sleep(15)
