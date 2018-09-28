@@ -18,7 +18,7 @@ function main() {
 
   create_editor({
     name: "seismic",
-    weights_url: "models/seismic.json",
+    weights_url: "models/seismic.bin",
     mode: "line",
     clear: "#FFFFFF",
     colors: {
